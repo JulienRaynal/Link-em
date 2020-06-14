@@ -1,0 +1,51 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "summary": "Sample Short Description",
+          "examplePhrases": [
+            "Alexa open hello world",
+            "hello",
+            "help"
+          ],
+          "keywords": [],
+          "name": "LinkEm",
+          "description": "Sample Full Description"
+        },
+        "fr-FR": {
+          "summary": "Partie d\u0027un projet scolaire",
+          "examplePhrases": [
+            "Alexa, demande à google d\u0027allumer le ventilateur"
+          ],
+          "keywords": [],
+          "name": "LinkEm",
+          "description": "La skill linkEm est une skill qui a pour but d’interagir avec google assistant au travers d\u0027un serveur tiers",
+          "smallIconUri": "file://assets/images/fr-FR_smallIconUri.png",
+          "largeIconUri": "file://assets/images/fr-FR_largeIconUri.png"
+        }
+      },
+      "automaticDistribution": {
+        "isActive": false
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "Sample Testing Instructions.",
+      "category": "SCHOOLS",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:783616668536:function:15ade57e-08d4-4faa-aa8c-6515174d535d:Release_0"
+        },
+        "interfaces": []
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "locales": {
+        "fr-FR": {}
+      }
+    }
+  }
+}

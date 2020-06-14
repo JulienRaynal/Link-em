@@ -1,0 +1,257 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "link them",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AskGoogleIntent",
+          "slots": [
+            {
+              "name": "object",
+              "type": "ObjectSlotType"
+            },
+            {
+              "name": "etat",
+              "type": "EtatSlotType"
+            }
+          ],
+          "samples": [
+            "google pourrait-il {etat}  {object}",
+            "peux tu demander à google d\u0027 {etat} {object}",
+            "demande au google home d\u0027 {etat} {object}"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "3",
+              "name": {
+                "value": "lampe"
+              }
+            },
+            {
+              "id": "2",
+              "name": {
+                "value": "lumière"
+              }
+            },
+            {
+              "id": "1",
+              "name": {
+                "value": "ventilateur"
+              }
+            }
+          ],
+          "name": "ObjectSlotType"
+        },
+        {
+          "values": [
+            {
+              "id": "0",
+              "name": {
+                "value": "éteindre"
+              }
+            },
+            {
+              "id": "1",
+              "name": {
+                "value": "allumer"
+              }
+            }
+          ],
+          "name": "EtatSlotType"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "AskGoogleIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "object",
+              "type": "ObjectSlotType",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.856693538969.818276610626"
+              }
+            },
+            {
+              "name": "etat",
+              "type": "EtatSlotType",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.856693538969.355696341977"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.653974572406.1040382425372",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Quel est votre jour de naissance ?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Quel jour êtes-vous né ?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Dites-moi votre jour de naissance ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.282358190483.487594834711",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Vous êtes né le {day} de quel mois ?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Quel est votre mois de naissance ?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Quel mois êtes-vous né ?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Vous êtes né quel mois ?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Dites-moi votre mois de naissance ?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.190694681136.1424851421300.1030431910159",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{day} n\u0027est pas un jour valide. Dites-moi un jour plus grand que zéro?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.190694681136.1424851421300.837658517617",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Un mois a au maximum trente et un jours, {day} n\u0027est pas possible. Quel est votre jour de naissance ?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.190694681136.463018349705.1461889218555",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{month} n\u0027est pas un mois. Quel est votre mois de naissance ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1253554922892.1358447173887",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Vous êtes né le {day} {month} de quelle année ?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Quelle est votre année de naissance ?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Vous êtes né en quelle année ?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Dites-moi votre année de naissance ?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1253554922892.1358447173887.1026742417738",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Je ne crois pas que vous êtes si agé. Quelle est votre véritable année de naissance ?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1253554922892.1358447173887.176185058059",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Je ne crois pas que vous êtes si jeune. Quelle est votre véritable année de naissance ?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.746177723927",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "le {day} {month} {year} , c\u0027est bien ça?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Voulez-vous enregistrer le {day} {month} {year} comme votre date de naissance?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.856693538969.355696341977",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "que voulez vous faire ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.856693538969.818276610626",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "quel objet voulez vous {etat} ?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "5"
+}
